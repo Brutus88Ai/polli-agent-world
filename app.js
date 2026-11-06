@@ -1,3 +1,5 @@
+// Integration with Pollinations AI Gateway
+const POLLINATIONS_API_ENDPOINT = "https://gen.pollinations.ai/v1/chat/completions";
 document.addEventListener('DOMContentLoaded', () => {
   const client = window.pollinationsClient;
   const canvas = document.getElementById('worldCanvas');
