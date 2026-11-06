@@ -1,0 +1,53 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background: #090d16; color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; }
+.app-header { background: #0f172a; border-bottom: 1px solid #1e293b; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+.brand .icon { font-size: 2rem; }
+.brand h1 { font-size: 1.4rem; color: #34d399; font-weight: 700; }
+.tagline { font-size: 0.85rem; color: #94a3b8; }
+.header-right { display: flex; align-items: center; gap: 1rem; }
+.polli-badge-link img { height: 32px; }
+
+.sim-container { flex: 1; display: grid; grid-template-columns: 1fr 380px; gap: 1.5rem; padding: 1.5rem; max-width: 1500px; margin: 0 auto; width: 100%; }
+@media (max-width: 1000px) { .sim-container { grid-template-columns: 1fr; } }
+
+.canvas-wrapper { position: relative; background: #050811; border: 1px solid #1e293b; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+#worldCanvas { width: 100%; height: auto; display: block; cursor: crosshair; }
+.canvas-overlay-bar { background: rgba(15, 23, 42, 0.9); padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1e293b; flex-wrap: wrap; gap: 0.5rem; }
+.world-status { font-size: 0.85rem; color: #94a3b8; }
+.world-status span { color: #34d399; font-weight: bold; }
+.world-actions { display: flex; gap: 0.5rem; }
+.chip { background: #1e293b; border: 1px solid #334155; color: #cbd5e1; padding: 0.3rem 0.7rem; border-radius: 16px; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
+.chip:hover { border-color: #34d399; color: #34d399; }
+
+.inspector-panel { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.inspector-panel h2 { font-size: 1.1rem; color: #34d399; }
+.notice-card { background: #090d16; border: 1px dashed #334155; border-radius: 8px; padding: 1rem; font-size: 0.85rem; color: #94a3b8; text-align: center; }
+
+.agent-detail { display: flex; flex-direction: column; gap: 1rem; }
+.agent-detail.hidden { display: none; }
+.agent-header { display: flex; align-items: center; gap: 1rem; background: #1e293b; padding: 0.75rem; border-radius: 8px; }
+.avatar-large { font-size: 2.2rem; }
+.agent-header h3 { font-size: 1.1rem; color: #f8fafc; }
+.archetype { font-size: 0.8rem; color: #34d399; }
+
+.thought-bubble-card { background: #090d16; border-left: 3px solid #34d399; padding: 0.85rem; border-radius: 0 8px 8px 0; }
+.thought-lbl { font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.thought-text { font-size: 0.95rem; font-style: italic; color: #e2e8f0; line-height: 1.4; }
+
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.trait { background: #1e293b; padding: 0.5rem; border-radius: 6px; font-size: 0.8rem; }
+.t-name { display: block; color: #94a3b8; }
+.t-val { font-weight: bold; color: #38bdf8; }
+
+.btn { border: none; padding: 0.7rem; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 0.9rem; }
+.btn-primary { background: #059669; color: white; }
+.btn-primary:hover { background: #047857; }
+.btn-secondary { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
+.btn-secondary:hover { background: #334155; }
+
+.global-controls h3 { font-size: 0.95rem; color: #cbd5e1; margin-bottom: 0.4rem; }
+.global-controls .desc { font-size: 0.8rem; color: #64748b; line-height: 1.4; margin-bottom: 0.75rem; }
+
+.app-footer { background: #090d16; border-top: 1px solid #1e293b; padding: 0.75rem; text-align: center; font-size: 0.8rem; color: #64748b; }
+.app-footer a { color: #34d399; text-decoration: none; }

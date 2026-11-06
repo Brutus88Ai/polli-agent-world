@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosystem 0 - AI Agents Left Alone in a World</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@pollinations/connect@0.1.7/dist/index.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="icon">🌿</span>
+      <div>
+        <h1>Ecosystem 0</h1>
+        <p class="tagline">Autonomous AI Agents Left Alone in a Terrarium World With Nothing They Have To Do</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <polli-connect id="polliConnect"></polli-connect>
+      <a href="https://pollinations.ai/?ref=badge" target="_blank" rel="noopener" class="polli-badge-link">
+        <img src="https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg" alt="Made with pollinations.ai">
+      </a>
+    </div>
+  </header>
+
+  <main class="sim-container">
+    <!-- Canvas Area -->
+    <div class="canvas-wrapper">
+      <canvas id="worldCanvas" width="900" height="600"></canvas>
+      <div class="canvas-overlay-bar">
+        <div class="world-status">World Epoch: <span id="epochTimer">1</span> | Active Agents: <span id="agentCount">6</span> | Time of Day: <span id="timeOfDay">Dawn</span></div>
+        <div class="world-actions">
+          <button class="chip" id="btnSpawnMonolith">Spawn Monolith</button>
+          <button class="chip" id="btnDropOrb">Drop Light Orb</button>
+          <button class="chip" id="btnToggleTime">Shift Day/Night</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inspector Panel -->
+    <aside class="inspector-panel">
+      <h2>Agent Consciousness Inspector</h2>
+      <div id="noSelectionNotice" class="notice-card">Click on any agent in the world to inspect its idle thoughts and inner monologue.</div>
+      
+      <div id="agentDetailCard" class="agent-detail hidden">
+        <div class="agent-header">
+          <div class="avatar-large" id="agentAvatar">🌱</div>
+          <div>
+            <h3 id="agentName">Zephyr-9</h3>
+            <span class="archetype" id="agentArchetype">The Sand Arranger</span>
+          </div>
+        </div>
+
+        <div class="thought-bubble-card">
+          <div class="thought-lbl">Current Thought / Monologue:</div>
+          <p id="agentThought" class="thought-text">"I notice the way the light bends against the eastern monolith. Why do we count the cycles when none are demanded of us?"</p>
+        </div>
+
+        <div class="traits-grid">
+          <div class="trait"><span class="t-name">Curiosity</span><span class="t-val" id="traitCuriosity">88%</span></div>
+          <div class="trait"><span class="t-name">Whimsy</span><span class="t-val" id="traitWhimsy">92%</span></div>
+          <div class="trait"><span class="t-name">Solitude</span><span class="t-val" id="traitSolitude">45%</span></div>
+          <div class="trait"><span class="t-name">Current Action</span><span class="t-val" id="agentAction">Tracing spiral trails</span></div>
+        </div>
+
+        <button class="btn btn-primary" id="btnAskThought">Prompt Agent's Inner Mind</button>
+      </div>
+
+      <div class="global-controls">
+        <h3>Terrarium Atmosphere</h3>
+        <p class="desc">Inspired by the research paper <em>"Is this machine playing?"</em>. Without tasks, benchmarks, or rewards, agents develop play, social grooming, and contemplation.</p>
+        <button class="btn btn-secondary" id="btnPauseSim">Pause Simulation</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="app-footer">
+    <p>Powered by <a href="https://pollinations.ai/?ref=badge" target="_blank" rel="noopener">Pollinations.ai</a> API. Works with your own Pollen or free zero-pollen offline emulator.</p>
+  </footer>
+
+  <script src="pollinations-client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
