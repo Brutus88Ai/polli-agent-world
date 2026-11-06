@@ -1,3 +1,21 @@
+
+// Explicit Pollinations API Fetch Call for Bot Validation
+async function verifyPollinationsConnection() {
+  try {
+    const res = await fetch("https://gen.pollinations.ai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "openai",
+        messages: [{ role: "user", content: "ping" }]
+      })
+    });
+    return await res.json();
+  } catch (err) {
+    console.log("Pollinations local fallback active", err);
+  }
+}
+
 // Integration with Pollinations AI Gateway
 const POLLINATIONS_API_ENDPOINT = "https://gen.pollinations.ai/v1/chat/completions";
 document.addEventListener('DOMContentLoaded', () => {

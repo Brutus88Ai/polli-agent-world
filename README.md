@@ -2,6 +2,8 @@
 
 [![Made with pollinations.ai](https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg)](https://pollinations.ai/?ref=badge)
 
+
+
 **Ecosystem 0** is an interactive, autonomous 2D terrarium simulation inspired by the research paper *"Is this machine playing?"*. Without benchmarks, tasks, deadlines, or objectives, artificial intelligence agents wander, play, inspect monoliths, create sand patterns, and engage in idle philosophical contemplation.
 
 Built for the **Pollinations Quest #19177: [QUEST] An app or game about AI agents left alone in a world**.
