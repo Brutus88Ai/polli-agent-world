@@ -24,7 +24,7 @@ class PollinationsClient {
           'Authorization': `Bearer ${key}`
         },
         body: JSON.stringify({
-          model: 'openai',
+          model: 'openai/gpt-5.4-nano',
           messages: [
             {
               role: 'system',
@@ -41,12 +41,15 @@ Generate a single, poetic or contemplative thought (1-2 sentences) about their s
         })
       });
 
-      if (!res.ok) throw new Error('API failed');
+      if (!res.ok) {
+        const err = await res.text();
+        throw new Error(`Pollinations API Error (${res.status}): ${err}`);
+      }
       const data = await res.json();
       return data.choices[0].message.content.trim();
     } catch (e) {
-      console.warn('Fallback to offline thoughts:', e);
-      return this.simulateOfflineThought(agent, environment);
+      console.warn('API error:', e);
+      throw e;
     }
   }
 

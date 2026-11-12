@@ -184,10 +184,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!selectedAgent) return;
     document.getElementById('agentThought').textContent = 'Deep in contemplation...';
     const env = { nearby: 'Monolith & Ancient Wellspring', timeOfDay: dayNames[dayCycle] };
-    const thought = await client.generateAgentThought(selectedAgent, env);
-    selectedAgent.thought = thought;
-    document.getElementById('agentThought').textContent = `"${thought}"`;
+    try {
+      const thought = await client.generateAgentThought(selectedAgent, env);
+      selectedAgent.thought = thought;
+      document.getElementById('agentThought').textContent = `"${thought}"`;
+    } catch (err) {
+      document.getElementById('agentThought').textContent = `[Thought Error]: ${err.message}`;
+    }
   });
+
+  const polliConnect = document.getElementById('polliConnect');
+  if (polliConnect) {
+    polliConnect.addEventListener('change', () => {
+      if (polliConnect.apiKey) {
+        localStorage.setItem('polli_key', polliConnect.apiKey);
+      } else {
+        localStorage.removeItem('polli_key');
+      }
+    });
+  }
 
   btnSpawnMonolith.addEventListener('click', () => {
     landmarks.push({
